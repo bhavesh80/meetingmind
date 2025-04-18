@@ -1,73 +1,55 @@
-# Welcome to your Lovable project
+# MeetingMind: Your AI Meeting Assistant
 
-## Project info
+> Transform your meetings from time-drains to productivity powerhouses with an AI assistant that listens, learns, and leads.
 
-**URL**: https://lovable.dev/projects/9fa00cf6-637c-4585-bda2-e405cd75c564
+MeetingMind is an intelligent AI assistant designed to integrate seamlessly with Microsoft Teams. It aims to enhance meeting productivity by providing contextual support before, during, and after meetings, automating tedious tasks like note-taking and ensuring key information isn't lost.
 
-## How can I edit this code?
+## The Problem
 
-There are several ways of editing your application.
+Meetings are essential, but often inefficient. Common frustrations include:
 
-**Use Lovable**
+*   **Lost Context:** Valuable insights (up to 65%!) are often lost because they aren't documented effectively.
+*   **Documentation Burden:** Participants are forced to split focus between engaging in the discussion and taking notes.
+*   **Agenda Drift:** Meetings frequently stray from the intended topics, leaving critical points unaddressed.
+*   **Missed Questions:** Important questions go unasked as participants lose track of context or discussion flow.
+*   **Interview Inconsistency:** Interviewers face the challenge of actively listening, evaluating candidates, and asking relevant questions simultaneously.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9fa00cf6-637c-4585-bda2-e405cd75c564) and start prompting.
+## Our Solution: MeetingMind
 
-Changes made via Lovable will be committed automatically to this repo.
+MeetingMind joins your Microsoft Teams meetings as an AI participant to provide real-time support and post-meeting intelligence.
 
-**Use your preferred IDE**
+*   **Before the Meeting:** Analyzes agendas and relevant documents (future goal) to understand context.
+*   **During the Meeting:** Actively listens, transcribes the conversation in near real-time with speaker attribution, tracks agenda progress, and can suggest relevant questions or prompts (especially useful for interviews).
+*   **After the Meeting:** Delivers structured, searchable notes, highlighting key decisions, action items, and follow-ups.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Key Features (MVP & Vision)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+*   **`M1` Microsoft Teams Integration:** Seamlessly joins scheduled or ad-hoc Teams meetings upon invitation.
+*   **`M2` Real-Time Transcription:** Captures meeting audio and converts it to text using advanced AI speech-to-text.
+*   **`M3` Speaker Attribution:** Differentiates between speakers in the transcript (e.g., `Speaker A:`, `Speaker B:`).
+*   **`M4` Transcript Display:** Presents the transcript in a readable format (current MVP: console/log/basic view).
+*   **Agenda Tracking:** Monitors discussion against a predefined agenda and provides gentle reminders if topics are missed (Stretch Goal/Vision).
+*   **Contextual Question Suggestions:** Suggests relevant questions based on the meeting's flow and context (Stretch Goal/Vision).
+*   **Specialized Interview Support:** Offers predefined question prompts and captures observations during interviews (Stretch Goal/Vision).
+*   **Action Item & Decision Highlighting:** Identifies and extracts key outcomes from the discussion (Vision).
+*   **Post-Meeting Summaries & Notes:** Generates structured and searchable meeting notes automatically (Stretch Goal/Vision).
 
-Follow these steps:
+## Benefits
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+*   **Full Participation:** Frees up team members to fully engage in discussions.
+*   **Time Recovery:** Saves hours previously spent on manual note-taking and review.
+*   **Consistent Follow-Through:** Ensures decisions and action items are captured and tracked.
+*   **Enhanced Interviewing:** Improves the quality and consistency of the interview process.
+*   **Increased Meeting ROI:** Turns meetings into demonstrably valuable and productive sessions.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Use Cases
 
-# Step 3: Install the necessary dependencies.
-npm i
+MeetingMind is valuable for various meeting types:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+*   Daily Stand-ups
+*   Client Meetings
+*   Technical Interviews
+*   Project Planning Sessions
+*   Executive Briefings
+*   Brainstorming Sessions
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/9fa00cf6-637c-4585-bda2-e405cd75c564) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
