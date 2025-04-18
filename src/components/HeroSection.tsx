@@ -1,8 +1,41 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MessageSquare, CheckCircle } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+
+const USE_CASES = [
+  {
+    icon: MessageSquare,
+    title: "Smart Note-Taking",
+    description: "I've analyzed the agenda for today's meeting. I'll capture every key point and action item.",
+  },
+  {
+    icon: Calendar,
+    title: "Agenda Tracking",
+    description: "15 minutes remaining. We still need to discuss the Q4 marketing strategy.",
+  },
+  {
+    icon: CheckCircle,
+    title: "Action Items",
+    description: "I've captured 3 action items from this discussion. I'll include them in the meeting summary.",
+  }
+];
 
 const HeroSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % USE_CASES.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-b from-brand-purple-light/30 to-white">
       <div className="container mx-auto px-4">
@@ -32,38 +65,30 @@ const HeroSection = () => {
           </div>
           <div className="md:w-1/2 relative">
             <div className="relative z-10 bg-white rounded-xl shadow-xl p-6 max-w-lg mx-auto">
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 rounded-full bg-brand-purple flex items-center justify-center text-white">
-                  <MessageSquare size={20} />
-                </div>
-                <div className="ml-4">
-                  <h3 className="font-bold text-gray-900">MeetingMind Assistant</h3>
-                  <p className="text-sm text-gray-500">Just now</p>
-                </div>
-              </div>
-              <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                <p className="text-gray-700">
-                  I've analyzed the agenda for today's meeting. Here are the key points I'll be tracking:
-                </p>
-                <ul className="mt-3 space-y-2">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-purple mr-2 mt-0.5" />
-                    <span className="text-gray-700">Q2 Marketing Campaign Results</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-purple mr-2 mt-0.5" />
-                    <span className="text-gray-700">Website Redesign Progress</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-brand-purple mr-2 mt-0.5" />
-                    <span className="text-gray-700">New Product Launch Timeline</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="flex items-center">
-                <Calendar className="h-5 w-5 text-brand-purple mr-2" />
-                <span className="text-sm text-gray-600">I'll send comprehensive notes right after the meeting</span>
-              </div>
+              <Carousel className="w-full" selectedIndex={activeIndex}>
+                <CarouselContent>
+                  {USE_CASES.map((useCase, index) => (
+                    <CarouselItem key={index}>
+                      <div className="flex items-center mb-6">
+                        <div className="w-10 h-10 rounded-full bg-brand-purple flex items-center justify-center text-white">
+                          <useCase.icon size={20} />
+                        </div>
+                        <div className="ml-4">
+                          <h3 className="font-bold text-gray-900">{useCase.title}</h3>
+                          <p className="text-sm text-gray-500">Just now</p>
+                        </div>
+                      </div>
+                      <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                        <p className="text-gray-700">{useCase.description}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <Calendar className="h-5 w-5 text-brand-purple mr-2" />
+                        <span className="text-sm text-gray-600">Keeping your meetings on track</span>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
             <div className="absolute top-1/4 -right-12 w-32 h-32 bg-brand-yellow rounded-full opacity-50 blur-xl animate-float"></div>
             <div className="absolute bottom-1/4 -left-12 w-32 h-32 bg-brand-green rounded-full opacity-50 blur-xl animate-float" style={{ animationDelay: "2s" }}></div>
