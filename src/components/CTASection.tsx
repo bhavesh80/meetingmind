@@ -1,10 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <div className="py-16 md:py-24 bg-gradient-to-br from-brand-purple/90 to-brand-purple-dark/90 text-white">
+    <div className="py-16 md:py-24 bg-brand-purple/90 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
